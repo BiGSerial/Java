@@ -1,0 +1,68 @@
+package aula;
+
+import java.util.Scanner;
+
+public class Calculadora {
+	  
+    public static void main(String[] args){
+        Scanner entrada = new Scanner(System.in);
+        boolean loop = true;
+        int num1, num2,valorFinal;
+		int operacao;
+
+        While(loop);{
+            System.out.print("Escolha a operação:\n"
+            + "1 - Adição\n"
+            + "2 - Subtração\n"
+            + "3 - Multiplicação\n"
+            + "4 - Divisão\n"
+            + "5 - Sair");
+            operacao = entrada.nextInt();
+        switch (operacao) {
+            case 1:
+                System.out.println("informe o primeiro valor: ");
+                num1 = entrada.nextInt();
+                System.out.println("informe o Segundo valor: ");
+                num2 = entrada.nextInt();
+                valorFinal = num1 + num2;
+                System.out.println("O Valor da soma é: "+valorFinal);
+                break;
+            case 2:
+                System.out.println("informe o primeiro valor: ");
+                num1 = entrada.nextInt();
+                System.out.println("informe o Segundo valor: ");
+                num2 = entrada.nextInt();
+                valorFinal = num1 - num2;
+                System.out.println("O Valor da subtração é: "+valorFinal);
+                break;
+            case 3:
+                System.out.println("informe o primeiro valor: ");
+                num1 = entrada.nextInt();
+                System.out.println("informe o Segundo valor: ");
+                num2 = entrada.nextInt();
+                valorFinal = num1*num2;
+                System.out.println("O Valor da multiplicação é: "+valorFinal);
+                break;
+            case 4:
+                System.out.println("informe o primeiro valor: ");
+                num1 = entrada.nextInt();
+                System.out.println("informe o Segundo valor: ");
+                num2 = entrada.nextInt();
+                valorFinal = num1/num2;   
+                System.out.println("O Valor da divisão é: "+valorFinal);
+                break;
+            default:
+            	loop = false;
+                break;
+                
+        }   
+        }
+}
+
+	private static void While(boolean loop) {
+		// TODO Auto-generated method stub
+		
+	}
+    
+
+    }
