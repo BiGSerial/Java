@@ -6,56 +6,65 @@ public class Calculadora {
 	  
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
-        boolean loop = true;
-        int num1, num2,valorFinal;
+        double num1, num2, resultado = 0;
 		int operacao;
-
-        While(loop);{
-            System.out.print("Escolha a operaÁ„o:\n"
-            + "1 - AdiÁ„o\n"
-            + "2 - SubtraÁ„o\n"
-            + "3 - MultiplicaÁ„o\n"
-            + "4 - Divis„o\n"
-            + "5 - Sair");
+		
+		
+		
+        while (true){
+            System.out.print("\n\nEscolha a opera√ß√£o:\n"
+            + "1 - Adi√ß√£o\n"
+            + "2 - Subtra√ß√£o\n"
+            + "3 - Multiplica√ß√£o\n"
+            + "4 - Divis√£o\n"
+            + "5 - Sair\n");
+            
             operacao = entrada.nextInt();
-        switch (operacao) {
-            case 1:
-                System.out.println("informe o primeiro valor: ");
-                num1 = entrada.nextInt();
-                System.out.println("informe o Segundo valor: ");
-                num2 = entrada.nextInt();
-                valorFinal = num1 + num2;
-                System.out.println("O Valor da soma È: "+valorFinal);
-            case 2:
-                System.out.println("informe o primeiro valor: ");
-                num1 = entrada.nextInt();
-                System.out.println("informe o Segundo valor: ");
-                num2 = entrada.nextInt();
-                valorFinal = num1 - num2;
-                System.out.println("O Valor da subtraÁ„o È: "+valorFinal);
-                break;
-            case 3:
-                System.out.println("informe o primeiro valor: ");
-                num1 = entrada.nextInt();
-                System.out.println("informe o Segundo valor: ");
-                num2 = entrada.nextInt();
-                valorFinal = num1*num2;
-                System.out.println("O Valor da multiplicaÁ„o È: "+valorFinal);
-                break;
-            case 4:
-                System.out.println("informe o primeiro valor: ");
-                num1 = entrada.nextInt();
-                System.out.println("informe o Segundo valor: ");
-                num2 = entrada.nextInt();
-                valorFinal = num1/num2;   
-                System.out.println("O Valor da divis„o È: "+valorFinal);
-                break;
-            default:
-            	loop = false;
-                break;
-                
-        }   
+            
+            if (operacao == 1) {
+            	System.out.print("Digite o Primeiro Valor: ");
+        		num1 = entrada.nextDouble();		
+        		System.out.print("Digite o Segundo Valor: ");
+        		num2 = entrada.nextDouble();
+            	resultado = num1 + num2;
+            	break;
+            } else if (operacao == 2) {
+            	System.out.print("Digite o Primeiro Valor: ");
+        		num1 = entrada.nextDouble();		
+        		System.out.print("Digite o Segundo Valor: ");
+        		num2 = entrada.nextDouble();
+            	resultado = num1 - num2;
+            	break;
+            } else if (operacao == 3) {
+            	System.out.print("Digite o Primeiro Valor: ");
+        		num1 = entrada.nextDouble();		
+        		System.out.print("Digite o Segundo Valor: ");
+        		num2 = entrada.nextDouble();
+            	resultado = num1 * num2;
+            	break;
+            } else if (operacao == 4) {
+            	System.out.print("Digite o Primeiro Valor: ");
+        		num1 = entrada.nextDouble();		
+        		System.out.print("Digite o Segundo Valor: ");
+        		num2 = entrada.nextDouble();
+            	while (num2 == 0) {
+            		System.out.print("Opera√ß√£o Inv√°lida. Divis√£o por 0 \n");
+            		System.out.print("Digite o Segundo Valor diferente que 0: \n");
+            		num2 = entrada.nextDouble();
+            	}
+            	
+            	resultado = num1 / num2;
+            	break;
+            } else if (operacao == 5) {
+            	System.out.print("FIM DO PROGRAMA\n");
+            	resultado = 0;
+            	break;
+            } else {
+            	System.out.print("Comando Inv√°lido\n");
+            } 
         }
+        
+        System.out.print("Resultado √©: " + resultado+"\n");
 }
 
 	private static void While(boolean loop) {
